@@ -1,4 +1,4 @@
-_cli_zsh_autocomplete() {
+_cli_crio_zsh_autocomplete() {
 
   local -a cmds
   cmds=('complete:Generate bash, fish or zsh completions.' 'completion:Generate bash, fish or zsh completions.' 'man:Generate the man page documentation.' 'markdown:Generate the markdown documentation.' 'md:Generate the markdown documentation.' 'config:Outputs a commented version of the configuration file that could be used
@@ -13,4 +13,4 @@ it later with **--config**. Global options will modify the output.' 'version:dis
   return
 }
 
-compdef _cli_zsh_autocomplete crio
+compdef _cli_crio_zsh_autocomplete crio
