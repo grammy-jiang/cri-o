@@ -38,7 +38,7 @@ func completion() *cli.Command {
 	}
 }
 
-const bashCompletionTemplate = `_cli_bash_autocomplete() {
+const bashCompletionTemplate = `_cli_crio_bash_autocomplete() {
     local cur opts base
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
@@ -47,7 +47,7 @@ const bashCompletionTemplate = `_cli_bash_autocomplete() {
     return 0
 }
 
-complete -F _cli_bash_autocomplete %s`
+complete -F _cli_crio_bash_autocomplete %s`
 
 func bashCompletion(c *cli.Context) error {
 	subcommands := []string{}
@@ -72,7 +72,7 @@ func bashCompletion(c *cli.Context) error {
 	return nil
 }
 
-const zshCompletionTemplate = `_cli_zsh_autocomplete() {
+const zshCompletionTemplate = `_cli_crio_zsh_autocomplete() {
 
   local -a cmds
   cmds=('%s')
@@ -85,7 +85,7 @@ const zshCompletionTemplate = `_cli_zsh_autocomplete() {
   return
 }
 
-compdef _cli_zsh_autocomplete %s`
+compdef _cli_crio_zsh_autocomplete %s`
 
 func zshCompletion(c *cli.Context) error {
 	subcommands := []string{}
